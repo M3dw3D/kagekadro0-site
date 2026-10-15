@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Политика конфиденциальности приложения KageKadro0 Shorts — доступ Google Drive и YouTube OAuth, хранение и удаление данных.">
+  <meta name="theme-color" content="#080915">
+  <title>Политика конфиденциальности — KageKadro0 Shorts</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<a class="skip" href="#main">К содержанию</a>
+<header><div class="shell top">
+  <a class="brand" href="./"><span class="brandmark" aria-hidden="true">K</span>KageKadro0 <span style="color:#b5a4ff">Shorts</span></a>
+  <nav aria-label="Навигация"><a href="./">Главная</a><a href="./privacy.html" aria-current="page">Конфиденциальность</a><a href="https://www.youtube.com/@KageKadro0" rel="noopener noreferrer">YouTube ↗</a></nav>
+</div></header>
+<main id="main">
+  <div class="shell page-head"><div class="section-label">Privacy Policy</div><h1>Политика <span class="gradient">конфиденциальности.</span></h1><p>Как персональный инструмент KageKadro0 Shorts использует разрешённые данные Google, хранит техническую информацию и позволяет отозвать доступ.</p><p class="fineprint" style="margin-top:15px">Последнее обновление: 15 октября 2026 г. / Last updated: October 15, 2026.</p></div>
+  <div class="shell policy">
+    <section class="block"><h2>1. Кто мы и для чего приложение</h2>
+      <p><strong>KageKadro0 Shorts</strong> (также «KageKadro0 AutoPublisher», далее — «Приложение») — личный инструмент владельца YouTube-канала <a href="https://www.youtube.com/@KageKadro0">@KageKadro0</a>. Он загружает одобренные короткие видео из Google Drive в YouTube с помощью GitHub Actions и настраивает время публикации. Это не открытая платформа: регистрация сторонних пользователей не предусмотрена.</p>
+      <p>Сайт нужен для описания инструмента и опубликования этой политики. На сайте нет входа через Google.</p>
+    </section>
+    <section class="block"><h2>2. Какие разрешения запрашиваем</h2>
+      <ul>
+        <li><strong>YouTube upload</strong> (<code>youtube.upload</code>): загружать видео на авторизованный канал и задавать параметры публикации.</li>
+        <li><strong>YouTube read-only</strong> (<code>youtube.readonly</code>): проверять идентификатор подключённого канала, историю загрузок и состояние видео, чтобы избегать ошибок и дублей.</li>
+        <li><strong>Google Drive read-only</strong> (<code>drive.readonly</code>): скачивать выбранные владельцем MP4 и TXT по их идентификаторам. Разрешение технически допускает чтение файлов Google Drive шире этой выборки, но приложение использует только файлы, явно указанные в утверждённой очереди; оно не удаляет и не меняет содержимое Диска.</li>
+      </ul>
+      <p>Все эти разрешения предоставляются владельцем через официальный экран Google OAuth. Мы не запрашиваем пароль Google.</p>
+    </section>
+    <section class="block"><h2>3. Какие данные используются и зачем</h2>
+      <p>Приложение обрабатывает идентификаторы выбранных файлов, их MP4/TXT-содержимое, названия и описания, идентификатор YouTube-канала, YouTube video ID, статус загрузки, время публикации и технические результаты операций. Данные используются только для проверки канала, чтения выбранных роликов, создания запланированных публикаций и предотвращения дубликатов.</p>
+      <p>Мы не используем данные Google для рекламы, продажи, профилирования или обучения моделей искусственного интеллекта.</p>
+    </section>
+    <section class="block"><h2>4. Где храним данные</h2>
+      <ul>
+        <li>OAuth-идентификатор, секрет клиента и refresh token первоначально сохраняются локально у владельца и затем передаются в <strong>GitHub Actions Secrets</strong> приватного репозитория, не в этот публичный сайт.</li>
+        <li>Выбранные видео и описания временно скачиваются на среду выполнения GitHub Actions для загрузки в YouTube. Постоянное публичное хранилище исходных файлов здесь не создаётся.</li>
+        <li>Идентификаторы публикаций, ссылки и технические квитанции могут сохраняться в приватном репозитории владельца; загруженные видео хранятся в YouTube согласно настройкам владельца и условиям YouTube.</li>
+      </ul>
+      <p>Доступ к Google может быть отозван владельцем. Доступ к приватному репозиторию определяется настройками его владельца.</p>
+    </section>
+    <section class="block"><h2>5. Передача и ограничения использования</h2>
+      <p>Данные обрабатываются с использованием Google Drive, YouTube, Google OAuth и GitHub Actions — исключительно в объёме, необходимом для выполнения описанных задач. Мы не продаём данные и не передаём их рекламным брокерам или сторонним пользователям.</p>
+      <p>Использование данных, полученных через Google API, соответствует <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener noreferrer">Google API Services User Data Policy</a>, включая требования <strong>Limited Use</strong>. Доступ человека к данным ограничен действиями самого владельца и случаями, необходимыми для безопасности, поддержки или соблюдения закона.</p>
+    </section>
+    <section class="block"><h2>6. Отзыв согласия, удаление и сроки хранения</h2>
+      <p>Владелец может в любое время отозвать Google OAuth-доступ в <a href="https://myaccount.google.com/connections" rel="noopener noreferrer">настройках Google-аккаунта</a>. Для прекращения автоматизации также можно удалить секреты из приватного GitHub-репозитория и локальной папки <code>.secrets</code>, отключить workflow и удалить технические квитанции. Исходные файлы удаляются владельцем из Google Drive отдельно; уже загруженные видео — отдельно в YouTube Studio.</p>
+      <p>Технические квитанции и OAuth-секреты сохраняются, пока нужны для работы или пока владелец их не удалит. Временные данные в рабочей среде GitHub Actions не предназначены для долговременного хранения приложением. Платформа GitHub может иметь собственные журналы выполнения и сроки хранения.</p>
+    </section>
+    <section class="block"><h2>7. Данные посетителей сайта</h2>
+      <p>Сайт статический, не содержит аналитики, сторонних пикселей и JavaScript-трекеров и сам не устанавливает cookies. Хостинг <strong>GitHub Pages</strong> может технически обрабатывать IP-адреса и журналы запросов по своей политике. Внешние ссылки ведут на сайты третьих сторон, к которым применяются их правила.</p>
+    </section>
+    <section class="block"><h2>8. Контакты и изменения</h2>
+      <p>Вопросы о данных и запросы на изменение можно направлять владельцу приложения через <a href="https://github.com/M3dw3D/kagekadro0-site/issues" rel="noopener noreferrer">GitHub Issues сайта</a>. Не публикуйте в общедоступных обращениях пароли, токены, личные файлы или другую конфиденциальную информацию.</p>
+      <p>При изменении процессов обработки эта страница будет обновляться с новой датой редакции.</p>
+    </section>
+    <section class="block"><h2>English summary</h2>
+      <p>KageKadro0 Shorts is a personal tool for the owner of the <a href="https://www.youtube.com/@KageKadro0">@KageKadro0</a> channel, not a public sign-up service. It uses Google OAuth scopes <strong>youtube.upload</strong>, <strong>youtube.readonly</strong>, and <strong>drive.readonly</strong> to read explicitly selected Drive files, verify the connected YouTube channel, and upload approved, scheduled Shorts. Google user data is not sold, used for advertising, or used to train AI models. OAuth tokens are kept in private GitHub Actions secrets and locally by the owner, never on this public site. Access may be revoked in Google Account settings. For contact, use the linked GitHub Issues page above. The detailed Russian sections of this policy describe collection, use, sharing, storage, retention and deletion.</p>
+    </section>
+  </div>
+</main>
+<footer><div class="shell foot"><span>© 2026 KageKadro0 Shorts · Personal YouTube publishing tool</span><div><a href="./">Главная</a><a href="https://github.com/M3dw3D/kagekadro0-site/issues" rel="noopener noreferrer">Связаться</a></div></div></footer>
+</body>
+</html>
